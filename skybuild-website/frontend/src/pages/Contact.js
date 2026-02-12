@@ -63,14 +63,14 @@ const Contact = () => {
     {
       icon: <FaPhone />,
       title: 'Phone',
-      content: '+91 98765 43210',
-      link: 'tel:+919876543210'
+      content: '+91 8840971046',
+      link: 'tel:+8840971046'
     },
     {
       icon: <FaEnvelope />,
       title: 'Email',
-      content: 'info@skybuild.com',
-      link: 'mailto:info@skybuild.com'
+      content: 'Himanshu.sharmars12@gmail.com',
+      link: 'mailto:Himanshu.sharmars12@gmail.com'
     },
     {
       icon: <FaMapMarkerAlt />,

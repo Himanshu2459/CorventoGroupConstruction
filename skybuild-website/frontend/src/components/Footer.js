@@ -61,11 +61,11 @@ const Footer = () => {
             <ul className="footer-contact">
               <li>
                 <FaPhone className="contact-icon" />
-                <span>+91 98765 43210</span>
+                <span>+91 8840971046</span>
               </li>
               <li>
                 <FaEnvelope className="contact-icon" />
-                <span>info@skybuild.com</span>
+                <span>Himanshu.sharmars12@gmail.com</span>
               </li>
               <li>
                 <FaMapMarkerAlt className="contact-icon" />

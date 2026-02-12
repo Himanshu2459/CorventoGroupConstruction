@@ -118,7 +118,8 @@ echo "REACT_APP_API_URL=http://localhost:5000/api" > .env
 ```bash
 cd backend
 npm run dev
-# Backend runs on http://localhost:5000
+# Backend runs on /api/...
+
 ```
 
 **Terminal 2 - Frontend:**

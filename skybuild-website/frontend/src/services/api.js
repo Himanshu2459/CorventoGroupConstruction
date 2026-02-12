@@ -1,16 +1,36 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+/**
+ * BASE URL LOGIC
+ * ----------------
+ * 1. Local dev  → uses CRA proxy (/api)
+ * 2. Production → uses REACT_APP_API_URL
+ *
+ * Local:
+ *   package.json → "proxy": "http://localhost:5000"
+ *   API calls → /api/...
+ *
+ * Production (AWS):
+ *   REACT_APP_API_URL=https://your-backend-domain/api
+ */
+
+const API_URL =
+  process.env.REACT_APP_API_URL || '/api';
 
 // Create axios instance
 const api = axios.create({
   baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  timeout: 10000
 });
 
-// Add token to requests if available
+/**
+ * REQUEST INTERCEPTOR
+ * -------------------
+ * Attach JWT token if available
+ */
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
@@ -19,12 +39,26 @@ api.interceptors.request.use(
     }
     return config;
   },
+  (error) => Promise.reject(error)
+);
+
+/**
+ * RESPONSE INTERCEPTOR
+ * --------------------
+ * Centralized error handling
+ */
+api.interceptors.response.use(
+  (response) => response,
   (error) => {
+    // Optional: log error globally
+    console.error('API Error:', error.response || error.message);
     return Promise.reject(error);
   }
 );
 
-// Projects API
+/* =========================
+   PROJECTS API
+   ========================= */
 export const projectsAPI = {
   getAll: (params) => api.get('/projects', { params }),
   getById: (id) => api.get(`/projects/${id}`),
@@ -33,7 +67,9 @@ export const projectsAPI = {
   delete: (id) => api.delete(`/projects/${id}`)
 };
 
-// Services API
+/* =========================
+   SERVICES API
+   ========================= */
 export const servicesAPI = {
   getAll: () => api.get('/services'),
   getById: (id) => api.get(`/services/${id}`),
@@ -42,14 +78,18 @@ export const servicesAPI = {
   delete: (id) => api.delete(`/services/${id}`)
 };
 
-// Contact API
+/* =========================
+   CONTACT / REGISTER API
+   ========================= */
 export const contactAPI = {
   submit: (data) => api.post('/contact', data),
   getAll: (params) => api.get('/contact', { params }),
   update: (id, data) => api.put(`/contact/${id}`, data)
 };
 
-// Testimonials API
+/* =========================
+   TESTIMONIALS API
+   ========================= */
 export const testimonialsAPI = {
   getAll: () => api.get('/testimonials'),
   getAllAdmin: () => api.get('/testimonials/all'),
@@ -58,7 +98,9 @@ export const testimonialsAPI = {
   delete: (id) => api.delete(`/testimonials/${id}`)
 };
 
-// Auth API
+/* =========================
+   AUTH API
+   ========================= */
 export const authAPI = {
   login: (credentials) => api.post('/auth/login', credentials),
   register: (userData) => api.post('/auth/register', userData),

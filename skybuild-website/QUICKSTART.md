@@ -46,7 +46,8 @@ npm install
 cd skybuild-website/backend
 npm run dev
 ```
-Server runs on: http://localhost:5000
+Server runs on: /api/...
+
 
 **Terminal 2 - Frontend:**
 ```bash
