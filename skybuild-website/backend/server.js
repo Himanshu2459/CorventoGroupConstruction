@@ -51,9 +51,16 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
   }
 });
 
-// Test the database connection
+// Test the database connection and sync models
 sequelize.authenticate()
-  .then(() => console.log('✅ Connected to PostgreSQL'))
+  .then(() => {
+    console.log('✅ Connected to PostgreSQL');
+    // Sync database models (this will update tables to match your models)
+    return sequelize.sync({ alter: true });
+  })
+  .then(() => {
+    console.log('✅ Database models synchronized');
+  })
   .catch(err => console.error('❌ PostgreSQL connection error:', err));
 
 // Error handling middleware
