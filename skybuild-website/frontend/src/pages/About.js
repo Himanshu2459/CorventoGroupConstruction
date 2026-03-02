@@ -5,6 +5,7 @@ import { FaAward, FaUsers, FaHandshake, FaLightbulb } from 'react-icons/fa';
 import './About.css';
 
 const About = () => {
+
   const values = [
     {
       icon: <FaAward />,
@@ -28,11 +29,12 @@ const About = () => {
     }
   ];
 
+  // ✅ Updated CEO Name + Company Branding
   const team = [
     {
-      name: 'Rajesh Kumar',
+      name: 'Domen Thakur',
       role: 'Founder & CEO',
-      description: 'With 20+ years in construction, Rajesh leads Skybuild with vision and expertise.'
+      description: 'With 20+ years in construction, Domen leads Corvento Group with vision, innovation, and commitment to excellence.'
     },
     {
       name: 'Priya Sharma',
@@ -48,6 +50,8 @@ const About = () => {
 
   return (
     <div className="about-page">
+
+      {/* Hero Section */}
       <section className="page-hero">
         <div className="hero-overlay"></div>
         <div className="container">
@@ -56,15 +60,17 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1>About Skybuild</h1>
+            <h1>About Corvento Group</h1>
             <p>Building excellence since 2008</p>
           </motion.div>
         </div>
       </section>
 
+      {/* Our Story */}
       <section className="section">
         <div className="container">
           <div className="about-intro">
+
             <motion.div
               className="about-text"
               initial={{ opacity: 0, x: -50 }}
@@ -74,14 +80,17 @@ const About = () => {
             >
               <h2>Our Story</h2>
               <div className="decorative-line"></div>
+
               <p>
-                Founded in 2008, Skybuild has grown from a small construction firm to one of Punjab's most trusted names in residential and commercial construction. Our journey began with a simple belief: every building should be a masterpiece.
+                Founded in 2008, Corvento Group has grown into one of Punjab's most trusted names in residential and commercial construction. Our journey began with a clear mission — to build structures that stand the test of time.
               </p>
+
               <p>
-                Over the years, we've completed hundreds of projects, from elegant houses to luxurious villas and grand kothis. Each project has taught us something new, and each client has helped us refine our craft.
+                Over the years, we have completed hundreds of projects, from elegant houses to luxurious villas and large commercial developments. Every project reflects our dedication to precision, quality, and client satisfaction.
               </p>
+
               <p>
-                Today, Skybuild stands for excellence, innovation, and unwavering commitment to quality. We don't just build structures; we build dreams, legacies, and spaces where life happens.
+                Today, Corvento Group represents excellence, innovation, and integrity. We don't just construct buildings — we create lasting landmarks and meaningful spaces.
               </p>
             </motion.div>
 
@@ -109,12 +118,15 @@ const About = () => {
                 <p>Expert Team Members</p>
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
 
+      {/* Our Values */}
       <section className="section bg-light">
         <div className="container">
+
           <motion.div
             className="section-header"
             initial={{ opacity: 0, y: 30 }}
@@ -142,11 +154,14 @@ const About = () => {
               </motion.div>
             ))}
           </div>
+
         </div>
       </section>
 
+      {/* Team Section */}
       <section className="section">
         <div className="container">
+
           <motion.div
             className="section-header"
             initial={{ opacity: 0, y: 30 }}
@@ -154,8 +169,8 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2>Meet Our Team</h2>
-            <p>Experienced professionals dedicated to your success</p>
+            <h2>Meet Our Leadership</h2>
+            <p>Experienced professionals dedicated to excellence</p>
           </motion.div>
 
           <div className="team-grid grid grid-3">
@@ -177,9 +192,11 @@ const About = () => {
               </motion.div>
             ))}
           </div>
+
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="cta-section section">
         <div className="container">
           <motion.div
@@ -190,11 +207,14 @@ const About = () => {
             className="cta-content"
           >
             <h2>Let's Build Something Amazing Together</h2>
-            <p>Get in touch with us to discuss your next project</p>
-            <Link to="/contact" className="btn btn-gold">Contact Us</Link>
+            <p>Get in touch with Corvento Group to discuss your next project</p>
+            <Link to="/contact" className="btn btn-gold">
+              Contact Us
+            </Link>
           </motion.div>
         </div>
       </section>
+
     </div>
   );
 };

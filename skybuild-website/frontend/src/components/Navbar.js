@@ -21,12 +21,12 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   }, [location]);
 
+  // ✅ Updated Navigation Links (Register removed)
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Projects', path: '/projects' },
     { name: 'Services', path: '/services' },
     { name: 'About', path: '/about' },
-    { name: 'Register', path: '/register' },
     { name: 'Contact', path: '/contact' }
   ];
 
@@ -39,8 +39,8 @@ const Navbar = () => {
     >
       <div className="navbar-container container">
         <Link to="/" className="navbar-logo">
-          <span className="logo-sky">SKY</span>
-          <span className="logo-build">BUILD</span>
+          <span className="logo-sky">CORVENTO</span>
+          <span className="logo-build">GROUP</span>
         </Link>
 
         <ul className={`navbar-menu ${mobileMenuOpen ? 'active' : ''}`}>
@@ -59,6 +59,8 @@ const Navbar = () => {
               </Link>
             </motion.li>
           ))}
+
+          {/* CTA Button */}
           <motion.li
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}

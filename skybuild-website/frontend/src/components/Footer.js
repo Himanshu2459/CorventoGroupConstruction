@@ -1,6 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { 
+  FaFacebookF, 
+  FaInstagram, 
+  FaLinkedinIn, 
+  FaTwitter, 
+  FaPhone, 
+  FaEnvelope, 
+  FaMapMarkerAlt 
+} from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -10,14 +18,18 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content container">
         <div className="footer-grid">
+
+          {/* Company Info */}
           <div className="footer-col">
             <div className="footer-logo">
-              <span className="logo-sky">SKY</span>
-              <span className="logo-build">BUILD</span>
+              <span className="logo-sky">CORVENTO</span>
+              <span className="logo-build">GROUP</span>
             </div>
+
             <p className="footer-tagline">
-              Building dreams into reality with precision, quality, and dedication.
+              Corvento Group Construction - Building excellence since 2008.
             </p>
+
             <div className="footer-social">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
                 <FaFacebookF />
@@ -34,6 +46,7 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Quick Links */}
           <div className="footer-col">
             <h4>Quick Links</h4>
             <ul className="footer-links">
@@ -45,6 +58,7 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Services */}
           <div className="footer-col">
             <h4>Services</h4>
             <ul className="footer-links">
@@ -56,6 +70,7 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Contact Info */}
           <div className="footer-col">
             <h4>Contact Info</h4>
             <ul className="footer-contact">
@@ -73,12 +88,17 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
         </div>
 
+        {/* Bottom Section */}
         <div className="footer-bottom">
           <div className="footer-line"></div>
-          <p>&copy; {currentYear} Skybuild. All rights reserved. | Designed with precision and care.</p>
+          <p>
+            &copy; {currentYear} Corvento Group. All rights reserved. | Designed with precision and care.
+          </p>
         </div>
+
       </div>
     </footer>
   );

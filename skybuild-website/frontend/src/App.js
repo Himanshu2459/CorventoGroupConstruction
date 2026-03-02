@@ -7,7 +7,6 @@ import Projects from './pages/Projects';
 import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Register from './pages/Register';
 import './App.css';
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/register" element={<Register />} />
           </Routes>
         </main>
         <Footer />
