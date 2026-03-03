@@ -408,7 +408,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📞 Support
 
-For support, email info@skybuild.com or create an issue in the repository.
+For support, email himanshu.sharmars12@gmail.com or create an issue in the repository.
 
 ---
 
