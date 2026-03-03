@@ -1,4 +1,4 @@
-# Corvento Group COnstruction- Construction Company Website
+# Corvento Group Construction- Construction Company Website
 
 A full-stack website for Skybuild Construction Company, specializing in houses, villas, and kothis construction.
 
